@@ -1,6 +1,6 @@
 # AgriStore
 
-Kelompok A2
-Benny Ridwan Susanto
-Nurita Indah Amalia
-Yoda Bagus Dwihardika
+Kelompok A2<br/>
+Benny Ridwan Susanto<br/>
+Nurita Indah Amalia<br/>
+Yoda Bagus Dwihardika<br/>
