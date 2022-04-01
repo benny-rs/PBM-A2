@@ -1,10 +1,9 @@
 // ignore: unused_import
-import 'package:agristore/Page_Perkenalan.dart';
 import 'package:agristore/Page_Login.dart';
 import 'package:agristore/Page_Register.dart';
 import 'package:flutter/material.dart';
 
-class page_awal extends StatelessWidget {
+class Pengenalan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,22 +22,24 @@ class page_awal extends StatelessWidget {
             height: 20,
           ),
           Container(
-              width: 250,
-              height: 250,
-              decoration: new BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/gambar.png'),
-                      fit: BoxFit.fill))),
+            width: 250,
+            height: 250,
+            margin: EdgeInsets.all(10),
+            child: Text(
+              "Selamat Datang di AgriStore, [Tolong Lanjutin Ndah]",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
           SizedBox(
             height: 100,
           ),
           ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                  return Pengenalan();
+                  return Login();
                 }));
               },
-              child: Text('Get Start',
+              child: Text('Next',
                   style: TextStyle(fontSize: 16, color: Colors.black)),
               style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(20), primary: Colors.white

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'page_awal.dart';
+import 'Page_Awal.dart';
 
-void main(){
+void main() {
   return runApp(MyApp());
 }
 
