@@ -26,7 +26,7 @@ class Pengenalan extends StatelessWidget {
             height: 250,
             margin: EdgeInsets.all(10),
             child: Text(
-              "Selamat Datang di AgriStore, [Tolong Lanjutin Ndah]",
+              "Selamat Datang di AgriStore, Aplikasi penjualan hasil tani",
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),

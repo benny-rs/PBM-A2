@@ -12,6 +12,11 @@ class page_awal extends StatelessWidget {
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
+            height: 150,
+            width: 150,
+            child: Image(image: AssetImage("assets/images/Logo.png")),
+          ),
+          Container(
               child: Text(
             "AgriStore",
             style: TextStyle(
@@ -30,7 +35,7 @@ class page_awal extends StatelessWidget {
                       image: AssetImage('assets/images/gambar.png'),
                       fit: BoxFit.fill))),
           SizedBox(
-            height: 100,
+            height: 95,
           ),
           ElevatedButton(
               onPressed: () {
