@@ -12,9 +12,9 @@ class page_awal extends StatelessWidget {
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
-            height: 150,
-            width: 150,
-            child: Image(image: AssetImage("assets/images/Logo.png")),
+            height: MediaQuery.of(context).size.height * 0.19,
+            width: MediaQuery.of(context).size.width * 1,
+            child: Image(image: AssetImage("assets/images/logo.png")),
           ),
           Container(
               child: Text(

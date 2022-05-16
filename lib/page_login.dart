@@ -1,4 +1,6 @@
+import 'package:agristore/Page_Home.dart';
 import 'package:agristore/Page_Register.dart';
+import 'package:agristore/navbar.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -20,11 +22,14 @@ class _LoginState extends State<Login> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               Container(
-                height: 150,
-                width: 150,
-                child: Image(image: AssetImage("assets/images/Logo.png")),
+                height: MediaQuery.of(context).size.height * 0.1,
+                width: MediaQuery.of(context).size.width * 1,
+                // child: Image(image: AssetImage("assets/images/logo.png")),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,30 +91,40 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 10,
               ),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   ElevatedButton(
                       onPressed: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (_) {
-                          return Register();
+                          return NavBar();
                         }));
                       },
-                      child: Text('Register',
+                      child: Text('Login',
                           style: TextStyle(fontSize: 16, color: Colors.black))),
                   SizedBox(
                     width: 20,
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (_) {
-                          return Login();
-                        }));
-                      },
-                      child: Text('Login',
-                          style: TextStyle(fontSize: 16, color: Colors.black)))
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) {
+                            return Register();
+                          },
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      'create account',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
             ],
