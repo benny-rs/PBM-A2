@@ -24,10 +24,17 @@ class _LoginState extends State<Login> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: MediaQuery.of(context).size.height * 0.1,
-                width: MediaQuery.of(context).size.width * 1,
-                // child: Image(image: AssetImage("assets/images/logo.png")),
-              ),
+                  height: MediaQuery.of(context).size.height * 0.2,
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  // width: 100,
+                  // height: 100,
+                  decoration: new BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/Logo.png'),
+                        fit: BoxFit.fill),
+                  )
+                  // child: Image(image: AssetImage("assets/images/Logo.png")),
+                  ),
               SizedBox(
                 height: 20,
               ),
@@ -89,7 +96,7 @@ class _LoginState extends State<Login> {
                 ],
               ),
               SizedBox(
-                height: 10,
+                height: 30,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,

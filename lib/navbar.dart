@@ -1,6 +1,9 @@
 import 'package:agristore/Page_Home.dart';
 import 'package:agristore/Page_Keranjang.dart';
-import 'package:agristore/Page_Profile.dart';
+import 'package:agristore/Page_Pembayaran.dart';
+import 'package:agristore/Pembelian.dart';
+// import 'package:agristore/Page_Profile.dart';
+import 'package:agristore/profil.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {
@@ -13,8 +16,9 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   int currentIndex = 0;
   final Screen = [
-    Home(),
-    Keranjang(),
+    HomePage(),
+    PagePembayaran(),
+    BeliPage(),
     Profile(),
   ];
 
@@ -27,7 +31,7 @@ class _NavBarState extends State<NavBar> {
         selectedItemColor: Colors.amber,
         selectedFontSize: 15,
         unselectedItemColor: Colors.white,
-        iconSize: 40,
+        iconSize: 35,
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
         items: const <BottomNavigationBarItem>[
@@ -38,6 +42,10 @@ class _NavBarState extends State<NavBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.add_shopping_cart),
             label: 'Keranjang',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_mall),
+            label: 'Pembelian',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),

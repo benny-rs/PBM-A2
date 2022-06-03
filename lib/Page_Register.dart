@@ -118,7 +118,7 @@ class Register extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (_) {
-                        return Home();
+                        return HomeScreen();
                       }));
                     },
                     child: Text('Create',

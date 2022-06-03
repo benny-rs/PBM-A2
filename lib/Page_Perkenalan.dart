@@ -40,7 +40,7 @@ class Pengenalan extends StatelessWidget {
                 }));
               },
               child: Text('Next',
-                  style: TextStyle(fontSize: 16, color: Colors.black)),
+                  style: TextStyle(fontSize: 20, color: Colors.black)),
               style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(20), primary: Colors.white
                   // side: BorderSide(width:3, color:Colors.brown),

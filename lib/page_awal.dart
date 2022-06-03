@@ -11,11 +11,20 @@ class page_awal extends StatelessWidget {
       backgroundColor: Colors.green,
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          // Container Untuk LOGO
           Container(
-            height: MediaQuery.of(context).size.height * 0.19,
-            width: MediaQuery.of(context).size.width * 1,
-            child: Image(image: AssetImage("assets/images/logo.png")),
+            // width: 100,
+            // height: 100,
+            height: MediaQuery.of(context).size.height * 0.2,
+            width: MediaQuery.of(context).size.width * 0.4,
+            decoration: new BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/Logo.png"),
+                  fit: BoxFit.fill),
+            ),
+            // child: Image(image: AssetImage("assets/images/Logo.png")),
           ),
+          // Container Untuk Text "AgriStore"
           Container(
               child: Text(
             "AgriStore",
@@ -25,17 +34,20 @@ class page_awal extends StatelessWidget {
             ),
           )),
           SizedBox(
-            height: 20,
+            height: 40,
           ),
+          // Container Untuk Gambar
           Container(
-              width: 250,
-              height: 250,
+              width: MediaQuery.of(context).size.width * 0.5,
+              height: MediaQuery.of(context).size.height * 0.3,
+              // width: 250,
+              // height: 250,
               decoration: new BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/gambar.png'),
                       fit: BoxFit.fill))),
           SizedBox(
-            height: 95,
+            height: 40,
           ),
           ElevatedButton(
               onPressed: () {
@@ -44,7 +56,7 @@ class page_awal extends StatelessWidget {
                 }));
               },
               child: Text('Get Start',
-                  style: TextStyle(fontSize: 16, color: Colors.black)),
+                  style: TextStyle(fontSize: 20, color: Colors.black)),
               style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(20), primary: Colors.white
                   // side: BorderSide(width:3, color:Colors.brown),
