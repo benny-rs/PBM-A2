@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: ">=2.14.0 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -27,18 +27,19 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
   google_fonts: ^2.3.2
+  image_picker: ^0.8.5+3
+  provider: ^6.0.3
+  dio: ^4.0.0 
+  cloud_firestore: ^3.1.17
+  cupertino_icons: ^1.0.2
+  firebase_auth: ^3.3.19
+  firebase_core: ^1.17.1
+  google_maps_flutter: ^2.1.5
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
@@ -67,7 +68,8 @@ flutter:
     - assets/images/telur.png
     - assets/images/UnggasTelur/
     - assets/images/IkanDaging/
-    - assets/images/BuahSayur/
+    - assets/images/BuahSayur/    
+    - assets/images/BerTani/    
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,7 +1,10 @@
-import 'package:agristore/Page_Home.dart';
-import 'package:agristore/Page_Keranjang.dart';
-import 'package:agristore/Page_Pembayaran.dart';
-import 'package:agristore/Pembelian.dart';
+import 'package:agristore/Home/Page_Home.dart';
+import 'package:agristore/Cart/Page_Keranjang.dart';
+import 'package:agristore/Cart/Page_Pembayaran.dart';
+// import 'package:agristore/Page_Pembayaran.dart';
+import 'package:agristore/Pembelian/Pembelian.dart';
+import 'package:agristore/Home/constants_Home.dart';
+import 'package:agristore/camera.dart';
 // import 'package:agristore/Page_Profile.dart';
 import 'package:agristore/profil.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +20,9 @@ class _NavBarState extends State<NavBar> {
   int currentIndex = 0;
   final Screen = [
     HomePage(),
-    PagePembayaran(),
-    BeliPage(),
+    Keranjang(),
+    // BeliPage(),
+    camera(),
     Profile(),
   ];
 
@@ -27,14 +31,17 @@ class _NavBarState extends State<NavBar> {
     return Scaffold(
       body: Screen[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xFF6FA15D),
+        // backgroundColor: pBackgroundColor,
+        backgroundColor: Colors.white,
+        // backgroundColor: const Color(0xFF6FA15D),
         selectedItemColor: Colors.amber,
-        selectedFontSize: 15,
-        unselectedItemColor: Colors.white,
-        iconSize: 35,
+        // selectedFontSize: 15,
+        unselectedItemColor: Color(0xFF6FA15D),
+        // unselectedItemColor: Colors.white,
+        // iconSize: 25,
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -45,7 +52,7 @@ class _NavBarState extends State<NavBar> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.local_mall),
-            label: 'Pembelian',
+            label: 'Pemesanan',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
