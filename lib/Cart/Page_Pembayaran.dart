@@ -1,3 +1,4 @@
+import 'package:agristore/maps.dart';
 import 'package:agristore/models/produk_models.dart';
 import 'package:agristore/Cart/widget/produk_widget.dart';
 import 'package:flutter/material.dart';
@@ -62,12 +63,20 @@ class PagePembayaran extends StatelessWidget {
                   ),
                   SizedBox(
                     // width: MediaQuery.of(context).size.width * 0.1,
-                    width: MediaQuery.of(context).size.width * 0.46,
+                    width: MediaQuery.of(context).size.width * 0.42,
                     // width: 100,
                   ),
-                  Icon(
-                    Icons.add_location_sharp,
-                    color: Colors.white,
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) {
+                        return MapSample();
+                      }));
+                    },
+                    icon: Icon(
+                      Icons.add_location_sharp,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
@@ -94,7 +103,7 @@ class PagePembayaran extends StatelessWidget {
                   ),
                   SizedBox(
                     // width: MediaQuery.of(context).size.width * 0.1,
-                    width: MediaQuery.of(context).size.width * 0.29,
+                    width: MediaQuery.of(context).size.width * 0.27,
                     // width: 100,
                   ),
                   Icon(
@@ -111,7 +120,7 @@ class PagePembayaran extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(10, 7.5, 10, 7.5),
               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
               width: size.width * 1,
-              height: size.height * .8,
+              height: size.height * .65,
               // color: Colors.amber,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
@@ -238,16 +247,29 @@ class PagePembayaran extends StatelessWidget {
                       ],
                     ),
                   ),
-                  ElevatedButton(
-                    onPressed: null,
-                    child: Text(
-                      "BAYAR",
-                      style: TextStyle(color: Colors.white),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color.fromARGB(255, 0, 133, 216),
                     ),
-                    // style: ButtonStyle(
-                    //   backgroundColor: MaterialStateProperty.all(Colors.red),
-                    // ),
-                  )
+                    child: InkWell(
+                      onTap: () {},
+                      child: Center(
+                        child: Text(
+                          "BAYAR",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

@@ -1,14 +1,33 @@
 import 'package:agristore/Cart/Page_Pembayaran.dart';
+import 'package:agristore/Cart/constants_Home.dart';
 import 'package:flutter/material.dart';
 
-class Keranjang extends StatefulWidget {
+class Keranjang extends StatelessWidget {
   const Keranjang({Key? key}) : super(key: key);
 
   @override
-  State<Keranjang> createState() => _KeranjangState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          // fontFamily: "Cairo",
+          scaffoldBackgroundColor: kBackgroundColor,
+          textTheme:
+              Theme.of(context).textTheme.apply(displayColor: kTextColor)),
+      home: KeranjangPage(),
+    );
+    ;
+  }
 }
 
-class _KeranjangState extends State<Keranjang> {
+class KeranjangPage extends StatefulWidget {
+  const KeranjangPage({Key? key}) : super(key: key);
+
+  @override
+  State<KeranjangPage> createState() => _KeranjangPageState();
+}
+
+class _KeranjangPageState extends State<KeranjangPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +67,7 @@ class CheckoutPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(10),
-            color: Color.fromARGB(255, 245, 184, 184),
+            color: Color(0xFFFBF3F3),
             child: Column(
               children: [
                 Row(
@@ -57,67 +76,41 @@ class CheckoutPage extends StatelessWidget {
                     Text("Pilih Semua"),
                   ],
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
+                // const SizedBox(
+                //   height: 10,
+                // ),
                 CheckoutCard(
-                    size: size,
-                    gambar: "assets/images/Logo.png",
-                    nama: "nama \n Rp15.000"),
-                const SizedBox(
-                  height: 10,
-                ),
+                    size: size, gambar: "assets/images/Logo.png", nama: "nama"),
+                // const SizedBox(
+                //   height: 10,
+                // ),
                 CheckoutCard(
-                    size: size,
-                    gambar: "assets/images/Logo.png",
-                    nama: "nama \n Rp15.000"),
-                const SizedBox(
-                  height: 10,
-                ),
+                    size: size, gambar: "assets/images/Logo.png", nama: "nama"),
+                // const SizedBox(
+                //   height: 10,
+                // ),
                 CheckoutCard(
-                    size: size,
-                    gambar: "assets/images/Logo.png",
-                    nama: "nama \n Rp15.000"),
-                const SizedBox(
-                  height: 10,
-                ),
+                    size: size, gambar: "assets/images/Logo.png", nama: "nama"),
+                // const SizedBox(
+                //   height: 10,
+                // ),
                 CheckoutCard(
-                    size: size,
-                    gambar: "assets/images/Logo.png",
-                    nama: "nama \n Rp15.000"),
-                // const CheckoutCard(image: "assets/makanan/ayam_bakar_madu.jpg", food: "Ayam bakar madu", quantity: 2),
-                // const SizedBox(
-                //   height: 5,
-                // ),
-                // const CheckoutCard(image: "assets/makanan/ayam_geprek.jpg", food: "Ayam geprek bawang", quantity: 2),
-                // const SizedBox(
-                //   height: 5,
-                // ),
-                // const CheckoutCard(image: "assets/makanan/ayam_crispy.jpg", food: "Ayam crispy sambal", quantity: 1),
-                // const SizedBox(
-                //   height: 5,
-                // ),
-                // const CheckoutCard(image: "assets/makanan/ayam_bakar_rica.jpg", food: "Ayam bakar rica", quantity: 4),
-                // const SizedBox(
-                //   height: 5,
-                // ),
-                // const SizedBox(
-                //   height: 30,
-                // ),
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                      return PagePembayaran();
-                    }));
-                  },
-                  child: Ink(
-                    width: double.infinity,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xff2f4858),
-                    ),
-                    child: const Center(
+                    size: size, gambar: "assets/images/Logo.png", nama: "nama"),
+                Container(
+                  width: double.infinity,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromARGB(255, 0, 133, 216),
+                  ),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) {
+                        return PagePembayaran();
+                      }));
+                    },
+                    child: Center(
                       child: Text(
                         "Checkout Sekarang",
                         style: TextStyle(
@@ -137,25 +130,33 @@ class CheckoutPage extends StatelessWidget {
   }
 }
 
-class CheckoutCard extends StatelessWidget {
+class CheckoutCard extends StatefulWidget {
   final String gambar;
   final String nama;
+  // final VoidCallback setstate;
   // final VoidCallback press;
-  const CheckoutCard({
+  CheckoutCard({
     Key? key,
     required this.size,
     required this.gambar,
     required this.nama,
+    // required this.setstate,
     // required this.press,
   }) : super(key: key);
 
   final Size size;
 
   @override
+  State<CheckoutCard> createState() => _CheckoutCardState();
+}
+
+class _CheckoutCardState extends State<CheckoutCard> {
+  @override
   Widget build(BuildContext context) {
     return Container(
-      width: size.width * 3,
-      height: 70,
+      margin: EdgeInsets.only(bottom: 10.0),
+      width: widget.size.width * 3,
+      height: 100,
       // color: Colors.amber,
       child: Row(
         children: [
@@ -166,71 +167,85 @@ class CheckoutCard extends StatelessWidget {
             // width: size.width * .3,
             decoration: new BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(gambar),
+                image: AssetImage(widget.gambar),
               ),
             ),
           ),
           // Spacer(),
           Container(
             decoration: BoxDecoration(border: Border.all(width: 2)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  nama,
-                  textAlign: TextAlign.start,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleSmall
-                      ?.copyWith(fontSize: 15),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                // Text(
-                //   "Rp15.000",
-                //   textAlign: TextAlign.start,
-                //   style: Theme.of(context)
-                //       .textTheme
-                //       .titleSmall
-                //       ?.copyWith(fontSize: 15),
-                // ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      color: Color(0xFF000000),
-                      child: Icon(
-                        Icons.minimize_rounded,
-                        color: Colors.white,
+            width: widget.size.width * .5,
+            child: Padding(
+              padding: EdgeInsets.only(left: 5.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.nama,
+                    textAlign: TextAlign.start,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleSmall
+                        ?.copyWith(fontSize: 15),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    "Rp15.000",
+                    textAlign: TextAlign.start,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleSmall
+                        ?.copyWith(fontSize: 15),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: add,
+                        icon: Icon(Icons.add_circle
+                            // color: Colors.white,
+                            ),
                       ),
-                    ),
-                    Container(
-                        width: 15,
+                      Container(
                         color: Colors.white,
+                        width: widget.size.width * .1,
                         child: Text(
-                          "1",
+                          '$_n',
+                          style: new TextStyle(fontSize: 17.0),
                           textAlign: TextAlign.center,
-                        )),
-                    Container(
-                      color: Color(0xFF000000),
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.white,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      IconButton(
+                        onPressed: minus,
+                        icon: Icon(Icons.remove_circle
+                            // color: Colors.white,
+                            ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           )
         ],
       ),
-      // child: Column(
-      //   children: <Widget>[
-      //     Image.asset("assets/images/Logo.png")
-      //   ],
-      // ),
     );
+  }
+
+  int _n = 0;
+
+  void minus() {
+    setState(() {
+      if (_n != 0) _n--;
+    });
+  }
+
+  void add() {
+    setState(() {
+      _n++;
+    });
   }
 }

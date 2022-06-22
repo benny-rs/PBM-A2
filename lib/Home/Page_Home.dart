@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          fontFamily: "Cairo",
+          // fontFamily: "Cairo",
           scaffoldBackgroundColor: kBackgroundColor,
           textTheme:
               Theme.of(context).textTheme.apply(displayColor: kTextColor)),
