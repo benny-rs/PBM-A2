@@ -13,6 +13,14 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool _isHidePassword = true;
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _isHidePassword = !_isHidePassword;
+    });
+  }
+
   TextEditingController controller1 = TextEditingController();
   TextEditingController controller2 = TextEditingController();
 
@@ -96,8 +104,23 @@ class _LoginState extends State<Login> {
                   height: 40,
                   width: 270,
                   child: TextField(
+                    obscureText: _isHidePassword,
+                    autofocus: false,
+                    keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       hintText: "Password",
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          _togglePasswordVisibility();
+                        },
+                        child: Icon(
+                          _isHidePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: _isHidePassword ? Colors.grey : Colors.blue,
+                        ),
+                      ),
+                      isDense: true,
                       icon: Icon(
                         Icons.lock,
                         color: Colors.green,
@@ -119,7 +142,12 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 ElevatedButton(
-                    onPressed: LOGIN,
+                    onPressed: () => submit(
+                          context,
+                          controller1.text,
+                          controller2.text,
+                        ),
+                    // onPressed: LOGIN,
                     child: Text('Login',
                         style: TextStyle(fontSize: 16, color: Colors.black))),
                 SizedBox(
@@ -150,6 +178,21 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+
+  void submit(BuildContext context, String email, String password) {
+    if (email.isEmpty || password.isEmpty) {
+      final snackBar = SnackBar(
+        duration: const Duration(seconds: 5),
+        content: Text("Email dan password harus diisi"),
+        backgroundColor: Colors.red,
+      );
+
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      return;
+    } else {
+      LOGIN();
+    }
   }
 
   void LOGIN() async {

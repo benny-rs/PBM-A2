@@ -13,6 +13,14 @@ class Register_Page extends StatefulWidget {
 }
 
 class _Register_PageState extends State<Register_Page> {
+  bool _isHidePassword = true;
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _isHidePassword = !_isHidePassword;
+    });
+  }
+
   final controlNamaLengkap = TextEditingController();
   final controlEmail = TextEditingController();
   final controlNomorHP = TextEditingController();
@@ -155,8 +163,23 @@ class _Register_PageState extends State<Register_Page> {
                     height: 40,
                     width: 270,
                     child: TextField(
+                      obscureText: _isHidePassword,
+                      autofocus: false,
+                      keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                         hintText: "Password",
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            _togglePasswordVisibility();
+                          },
+                          child: Icon(
+                            _isHidePassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: _isHidePassword ? Colors.grey : Colors.blue,
+                          ),
+                        ),
+                        isDense: true,
                         icon: Icon(
                           Icons.lock,
                           color: Colors.green,
@@ -174,7 +197,14 @@ class _Register_PageState extends State<Register_Page> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   ElevatedButton(
-                      onPressed: CreateUser,
+                      onPressed: () => submit(
+                            context,
+                            controlNamaLengkap.text,
+                            controlEmail.text,
+                            controlNomorHP.text,
+                            controlPassword.text,
+                          ),
+                      // onPressed: CreateUser,
                       child: Text('Create',
                           style: TextStyle(fontSize: 16, color: Colors.black))),
                   SizedBox(
@@ -206,6 +236,25 @@ class _Register_PageState extends State<Register_Page> {
         ),
       ),
     );
+  }
+
+  void submit(BuildContext context, String NamaLengkap, String Email,
+      String NomorHp, String Password) {
+    if (NamaLengkap.isEmpty ||
+        Email.isEmpty ||
+        NomorHp.isEmpty ||
+        Password.isEmpty) {
+      final snackBar = SnackBar(
+        duration: const Duration(seconds: 5),
+        content: Text("Lengkapi Data"),
+        backgroundColor: Colors.red,
+      );
+
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      return;
+    } else {
+      CreateUser();
+    }
   }
 
   void CreateUser() async {

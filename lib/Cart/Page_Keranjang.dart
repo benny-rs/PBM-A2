@@ -32,12 +32,6 @@ class _KeranjangPageState extends State<KeranjangPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back),
-        ),
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Color(0xFF6FA15D),
         title: Text(
@@ -101,7 +95,7 @@ class CheckoutPage extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Color.fromARGB(255, 0, 133, 216),
+                    color: const Color(0xFF6FA15D),
                   ),
                   child: InkWell(
                     onTap: () {

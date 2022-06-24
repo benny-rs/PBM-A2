@@ -27,17 +27,19 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cloud_firestore: ^3.1.17
+  cupertino_icons: ^1.0.2
+  dio: ^4.0.0
+  firebase_auth: ^3.3.19
+  firebase_core: ^1.17.1
   flutter:
     sdk: flutter
   google_fonts: ^2.3.2
-  image_picker: ^0.8.5+3
-  provider: ^6.0.3
-  dio: ^4.0.0 
-  cloud_firestore: ^3.1.17
-  cupertino_icons: ^1.0.2
-  firebase_auth: ^3.3.19
-  firebase_core: ^1.17.1
   google_maps_flutter: ^2.1.5
+  google_nav_bar: ^5.0.6
+  image_picker: ^0.8.5+3
+  line_icons: ^2.0.1
+  provider: ^6.0.3
 
 dev_dependencies:
   flutter_lints: ^1.0.0
@@ -68,8 +70,8 @@ flutter:
     - assets/images/telur.png
     - assets/images/UnggasTelur/
     - assets/images/IkanDaging/
-    - assets/images/BuahSayur/    
-    - assets/images/BerTani/    
+    - assets/images/BuahSayur/
+    - assets/images/BerTani/
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
