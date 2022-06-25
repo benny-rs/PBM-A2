@@ -38,10 +38,10 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: kBackgroundColor,
           textTheme:
               Theme.of(context).textTheme.apply(displayColor: kTextColor)),
-      home: NavBar(),
+      // home: NavBar(),
       // home: camerarating(),
       // home: ratingloh(),
-      // home: page_awal(),
+      home: page_awal(),
     );
   }
 }
