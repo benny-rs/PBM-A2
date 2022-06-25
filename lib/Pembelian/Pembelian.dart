@@ -4,7 +4,7 @@ import 'package:agristore/Pembelian/Proses.dart';
 import 'package:agristore/Pembelian/Ulasan.dart';
 import 'package:flutter/material.dart';
 
-import '../Buah&Sayur/Kategori_Buah&Sayur.dart';
+import '../Kategori/Kategori_Buah&Sayur.dart';
 
 class BeliPage extends StatelessWidget {
   const BeliPage({Key? key}) : super(key: key);
@@ -12,13 +12,15 @@ class BeliPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 4,
         child: Scaffold(
           appBar: AppBar(
             centerTitle: true,
             title: Text("Pembelian"),
-            bottom: TabBar(isScrollable: true, tabs: [
+            bottom:
+                TabBar(indicatorColor: Colors.white, isScrollable: true, tabs: [
               Tab(
                 text: "Menunggu",
               ),

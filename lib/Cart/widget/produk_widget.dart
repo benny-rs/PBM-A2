@@ -19,7 +19,7 @@ class ProdukWidget extends StatelessWidget {
           height: MediaQuery.of(context).size.height * 0.11,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            color: Colors.blue,
+            color: Colors.white,
             image: DecorationImage(
                 image: AssetImage(produk.gambar), fit: BoxFit.cover),
           ),

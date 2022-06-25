@@ -10,6 +10,6 @@ class Pengiriman extends StatefulWidget {
 class _PengirimanState extends State<Pengiriman> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Tidak Ada Barang"));
+    return Center(child: Text("Belum ada pesanan"));
   }
 }

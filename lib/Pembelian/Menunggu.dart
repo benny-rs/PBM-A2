@@ -10,6 +10,6 @@ class Menunggu extends StatefulWidget {
 class _MenungguState extends State<Menunggu> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Tidak Ada Barang"));
+    return Center(child: Text("Belum ada pesanan"));
   }
 }

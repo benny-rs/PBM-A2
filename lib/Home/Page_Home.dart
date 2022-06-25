@@ -1,11 +1,11 @@
-import 'package:agristore/BerTani/Kategori_BerTani.dart';
+import 'package:agristore/Kategori/Kategori_BerTani.dart';
 // import 'package:agristore/constants_Home.dart';
 import 'package:agristore/Home/constants_Home.dart';
 // import 'package:agristore/Telur&Unggas/Kategori_Telur&Unggas.dart';
 import 'package:flutter/material.dart';
-import '../Buah&Sayur/Kategori_Buah&Sayur.dart';
-import '../Daging&Ikan/Kategori_Daging&Ikan.dart';
-import '../Telur&Unggas/Kategori_Telur&Unggas.dart';
+import '../Kategori/Kategori_Buah&Sayur.dart';
+import '../Kategori/Kategori_Daging&Ikan.dart';
+import '../Kategori/Kategori_Telur&Unggas.dart';
 import '../maps.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 

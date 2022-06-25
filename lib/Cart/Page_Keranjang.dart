@@ -2,24 +2,6 @@ import 'package:agristore/Cart/Page_Pembayaran.dart';
 import 'package:agristore/Cart/constants_Home.dart';
 import 'package:flutter/material.dart';
 
-class Keranjang extends StatelessWidget {
-  const Keranjang({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          // fontFamily: "Cairo",
-          scaffoldBackgroundColor: kBackgroundColor,
-          textTheme:
-              Theme.of(context).textTheme.apply(displayColor: kTextColor)),
-      home: KeranjangPage(),
-    );
-    ;
-  }
-}
-
 class KeranjangPage extends StatefulWidget {
   const KeranjangPage({Key? key}) : super(key: key);
 
@@ -32,6 +14,12 @@ class _KeranjangPageState extends State<KeranjangPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Color(0xFF6FA15D),
         title: Text(

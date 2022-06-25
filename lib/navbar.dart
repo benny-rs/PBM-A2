@@ -95,7 +95,7 @@ class _NavBarState extends State<NavBar> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Keranjang(),
+    KeranjangPage(),
     BeliPage(),
     Profile(),
   ];
